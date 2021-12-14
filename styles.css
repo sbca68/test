@@ -10,6 +10,7 @@
 .container {
   padding: 12px 16px 2px;
   min-width: 200px;
+  margin: 0px;
 }
 
 .title {
@@ -150,6 +151,7 @@ body {
   font-style: normal;
   font-weight: normal;
   background: #f3f4fa;
+  padding: 0px;
 }
 
 a {
