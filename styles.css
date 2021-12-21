@@ -13,6 +13,17 @@
   margin: 0px;
 }
 
+.title2 {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #28323e;
+  text-align: center;
+  margin: 0px 0px 20px;
+}
+
 .title {
   font-family: Source Sans Pro;
   font-style: normal;
@@ -32,8 +43,13 @@
   margin: 12px 0px;
   border-radius: 12px;
 }
+
 .main_container {
   padding: 24px 24px;
+}
+
+.popup_container {
+  padding: 44px 32px;
 }
 
 .main_row_1 {
@@ -114,6 +130,7 @@
   justify-content: flex-start;
   align-items: center;
 }
+
 .main_row_4 {
   height: 52px;
   display: flex;
@@ -144,6 +161,90 @@
   margin: 0px 4.5px 0px 14.5px;
   width: 8px;
   height: 13px;
+}
+
+.white_bg {
+  background: #ffffff;
+}
+
+.popup_row {
+  border-color: #f3f4fa;
+  border-width: 0px 0px 1px;
+  border-style: solid;
+  align-items: top;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup_row:last-child {
+  border-width: 0px;
+}
+
+.input_wrapper {
+  margin: 20px 0px;
+}
+
+.label_element {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #28323e;
+  padding: 0px 0px;
+  margin: 0px;
+  display: flex;
+}
+
+.hidden_checkbox {
+  --position: absolute;
+  --opacity: 0;
+  --width: 0;
+  --height: 0;
+}
+
+.hidden_checkbox+label::before {
+  content: '';
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-image: url("src/checkbox-unselected.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  margin-right: 12px;
+}
+
+.hidden_checkbox:checked+label::before {
+  content: '';
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-image: url("src/checkbox-selected.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  margin-right: 12px;
+}
+
+.button {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+  background: #298bff;
+  margin: 40px 0px 0px;
+  border-width: 0px;
+  width:100%; 
 }
 
 body {
