@@ -14,6 +14,30 @@ a {
   text-decoration: none;
 }
 
+table {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19,5px;
+  color: #28323e;
+}
+
+thead {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #28323e;
+}
+
+td {
+  height: 40px;
+  border-color: #f3f4fa;
+  border-width: 0px 0px 1px;
+  border-style: solid;
+}
+
 .larger-text {
   font-size: 32px;
 }
@@ -32,7 +56,6 @@ a {
   line-height: 28px;
   color: #28323e;
   text-align: center;
-  margin: 0px 0px 20px;
 }
 
 .title1 {
@@ -43,7 +66,6 @@ a {
   line-height: 28px;
   color: #28323e;
   text-align: center;
---margin: 0px 0px 20px;
 }
 
 .text14center {
