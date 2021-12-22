@@ -24,6 +24,33 @@
   margin: 0px 0px 20px;
 }
 
+.title1 {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 28px;
+  color: #28323e;
+  text-align: center;
+  --margin: 0px 0px 20px;
+}
+
+.text14center {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #6D7A8A;
+  margin: 12px 0px;
+}
+
+.img_big {
+  width: 100px;
+  height: 100px;
+  margin: 40px 0px;
+}
+
 .title {
   font-family: Source Sans Pro;
   font-style: normal;
@@ -49,7 +76,11 @@
 }
 
 .popup_container {
+  display: flex;
   padding: 44px 32px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .main_row_1 {
