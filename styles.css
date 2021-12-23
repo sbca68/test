@@ -38,6 +38,11 @@ td {
   border-style: solid;
 }
 
+li {
+   margin-top: 16px;
+   padding-left: 8px;
+}
+
 .larger-text {
   font-size: 32px;
 }
@@ -46,16 +51,6 @@ td {
   padding: 12px 16px 2px;
   min-width: 200px;
   margin: 0px;
-}
-
-.title2 {
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  color: #28323e;
-  text-align: center;
 }
 
 .title1 {
@@ -67,6 +62,26 @@ td {
   color: #28323e;
   text-align: center;
 }
+
+.title2 {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #28323e;
+  text-align: center;
+}
+.title3 {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #28323e;
+  text-align: center;
+}
+
 
 .text14center {
   font-family: Source Sans Pro;
