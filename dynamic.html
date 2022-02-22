@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="styles.css?v=3">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    window.onerror = function(error) {
+      alert(error); // Fire when errors occur. Just a test, not always do this.
+    };
     window.onload = function() {
     $.ajax({
     url: 'https://dm.lanta.me/api/user/getPaymentsList',
