@@ -9,23 +9,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     window.onload = function() {
-      document.body.innerHTML = `
-    <div class="container">
-    <div class="title">Выберите договор</div>
-    <a class="item item_container" href="index.html?contract=12345">
-        <span class="item_text">ФЛ-0348/06 <br> Тамбов, ул. Пионерская, дом 5"б",кв 69</span>
-        <img src="src/right_arrow.png" class="arrow">
-    </a>
-    <a class="item item_container" href="index.html?contract=86879">
-      <span class="item_text">ФЛ-86879/20 <br> Тригуляй, ул. Разлив-5, дом 23</span>
-        <img src="src/right_arrow.png" class="arrow">
-    </a>
-    <a class="item item_container" href="index.html?contract=000000">
-      <span class="item_text">ФЛ-000000/00 <br> г. Тамбов, ул. Северо-Западная, ддом 5</span>
-        <img src="src/right_arrow.png" class="arrow">
-    </a>
-  </div>
-    `
     $.ajax({
     url: 'https://dm.lanta.me/api/user/getPaymentsList',
     headers: {
@@ -36,7 +19,7 @@
     dataType: 'json',
     data: '',
     success: function(data){
-      console.log('succes: '+data);
+      document.body.innerHTML = data;
     }
   });
 
