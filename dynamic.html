@@ -10,7 +10,37 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     showBonusesPage = function(item) {
-    
+      document.body.innerHTML = `
+  <div class="container">
+    <div class="title">Бонусы</div>
+    <div class="item main_container">
+      <div class="main_row_1">
+        <span class="level_part1 header1">Уровень:</span>
+        <span class="level_part2">` + item.bonusLevel < 10 ? item.bonusLevel : 10 + `/10</span>
+      </div>
+      <div class="main_row_2">
+        <div class="header1">Ваш бонусный баланс</div>
+        <div class="row_2_content">
+          <span class="row_2_content_amount">` + item.bonus + `</span>
+          <span class="row_2_content_units">баллов</span>
+        </div>
+      </div>
+      <div class="main_row_3">
+        <div class="row_3_text">Обменяйте рубли на бонусы</div>
+        <img class="row_3_image" src="src/exchange_bonuses.png">
+      </div>
+      <a class="main_row_4" href="exchange_dialog.html" target="_blank">Обменять</a>
+    </div>
+    <a class="item item_container" href="bonus_table.html" target="_blank">
+        <span class="item_text">Таблица зависимости уровней от процентов</span>
+        <img src="src/right_arrow.png" class="arrow">
+    </a>
+    <a class="item item_container" href="bonus_agreement.html" target="_blank">
+      <span class="item_text">Условия бонусной программы</span>
+      <img src="src/right_arrow.png" class="arrow">
+    </a>
+  </div>
+`
     }
     
     showSelectContractPage = function(items) {
@@ -50,12 +80,16 @@
           } 
       );
       let url = new URL(document.location.href);
-      let contract = url.searchParams.get('contract');
-      if (response.count == 1 || contract) {
-        item = response.first
-        showBonusesPage(item)
+      let clientId = url.searchParams.get('client_id');
+      if (clientId) {
+        showBonusesPage(response.find( item => item.clientId == clientId));
+        return;
+      }
+      if (response.count == 1) {
+        let item = response[0];
+        showBonusesPage(item);
       } else {
-        showSelectContractPage(response)
+        showSelectContractPage(response);
       }
     }
   });
