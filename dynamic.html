@@ -9,6 +9,19 @@
   <link rel="stylesheet" type="text/css" href="styles.css?v=3">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    showBonusesPage = function(item) {
+    
+    }
+    
+    showSelectContractPage = function(items) {
+      document.body.innerHTML = `<div class="container"><div class="title">Выберите договор</div>` + 
+        items.map( (item) => `<a class="item item_container" href="?client_id=` + item.clientId + `">
+        <span class="item_text">` + item.contractName + `<br>` + item.address + `</span>
+        <img src="src/right_arrow.png" class="arrow">
+        </a>`).join('\n') + 
+        `</div>`;
+    }
+
     window.onerror = function(error) {
       alert(error); // Fire when errors occur. Just a test, not always do this.
     };
@@ -36,13 +49,14 @@
               );
           } 
       );
-
-      document.body.innerHTML = `<div class="container">
-    <div class="title">Выберите договор</div>
-    ` + response.map( (item) => `<a class="item item_container" href="index.html?contract=` + item.clientId + `">
-        <span class="item_text">` + item.contractName + `<br>` + item.address + `</span>
-        <img src="src/right_arrow.png" class="arrow">
-    </a>`).join('\n') + `</div>`;
+      let url = new URL(document.location.href);
+      let contract = url.searchParams.get('contract');
+      if (response.count == 1 || contract) {
+        item = response.first
+        showBonusesPage(item)
+      } else {
+        showSelectContractPage()
+      }
     }
   });
 
