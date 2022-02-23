@@ -23,7 +23,7 @@
     dataType: 'json',
     data: '',
     success: function(data){
-        globalThis.getPaymentsList = globalThis.getPaymentsList.flatMap(
+        const response = data.data.flatMap(
           function(item) { 
               return item.accounts.map( 
                   function(account) {
@@ -39,7 +39,7 @@
 
       document.body.innerHTML = `<div class="container">
     <div class="title">Выберите договор</div>
-    ` + globalThis.getPaymentsList.map( (item) => `<a class="item item_container" href="index.html?contract=` + item.clientId + `">
+    ` + response.map( (item) => `<a class="item item_container" href="index.html?contract=` + item.clientId + `">
         <span class="item_text">` + item.contractName + `<br>` + item.address + `</span>
         <img src="src/right_arrow.png" class="arrow">
     </a>`).join('\n') + `</div>`;
