@@ -56,6 +56,11 @@
       alert(error); // Fire when errors occur. Just a test, not always do this.
     };
     window.onload = function() {
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.loadingStartedHandler) {
+            window.webkit.messageHandlers.loadingStartedHandler.postMessage({
+                "loading": "started"
+            });
+    }
     $.ajax({
     url: 'https://dm.lanta.me/api/user/getPaymentsList',
     headers: {
