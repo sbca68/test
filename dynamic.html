@@ -91,6 +91,10 @@
       } else {
         showSelectContractPage(response);
       }
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.loadingFinishedHandler) {
+            window.webkit.messageHandlers.loadingFinishedHandler.postMessage({
+                "loading": "finished"
+            });
     }
   });
 
