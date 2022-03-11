@@ -52,15 +52,28 @@
         `</div>`;
     }
 
+    postLoadingStarted = function() {
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.loadingStartedHandler) {
+                window.webkit.messageHandlers.loadingStartedHandler.postMessage({
+                    "loading": "started"
+                });
+        }
+    }
+    postloadingFinished = function() {
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.loadingFinishedHandler) {
+                window.webkit.messageHandlers.loadingFinishedHandler.postMessage({
+                    "loading": "finished"
+                });
+        }
+    }
+    
     window.onerror = function(error) {
       alert(error); // Fire when errors occur. Just a test, not always do this.
     };
     window.onload = function() {
-    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.loadingStartedHandler) {
-            window.webkit.messageHandlers.loadingStartedHandler.postMessage({
-                "loading": "started"
-            });
-    }
+
+    postLoadingStarted()
+
     $.ajax({
     url: 'https://dm.lanta.me/api/user/getPaymentsList',
     headers: {
@@ -96,11 +109,8 @@
       } else {
         showSelectContractPage(response);
       }
-      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.loadingFinishedHandler) {
-            window.webkit.messageHandlers.loadingFinishedHandler.postMessage({
-                "loading": "finished"
-            });
-      }
+
+      postloadingFinished()
     }
   });
 
