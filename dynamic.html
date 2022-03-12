@@ -77,7 +77,7 @@
     $.ajax({
     url: 'https://dm.lanta.me/api/user/getPaymentsList',
     headers: {
-        'Authorization':'Bearer f17dcd61-4110-45a7-9109-6f5b11328b5c',
+        'Authorization':'Bearer ' + bearerToken(),
         'Content-Type':'application/json'
     },
     method: 'POST',
