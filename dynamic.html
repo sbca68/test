@@ -103,7 +103,7 @@
         showBonusesPage(response.find( item => item.clientId == clientId));
         return;
       }
-      if (response.count == 1) {
+      if (response.length == 1) {
         let item = response[0];
         showBonusesPage(item);
       } else {
